@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+set -vx
+
+bundle exec reek
+bundle exec rubocop --parallel --extra-details --display-style-guide
+bundle exec rspec

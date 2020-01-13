@@ -1,0 +1,98 @@
+require:
+  - 'rubocop-rspec'
+
+AllCops:
+  AutoCorrect: true
+  TargetRubyVersion: 2.7
+
+RSpec/NestedGroups:
+  Enabled: true
+  Max: 5
+
+RSpec/ExampleLength:
+  Enabled: true
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExpectInHook:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+    - 'spec/spec_helper.rb'
+
+Naming/FileName:
+  Exclude:
+    - 'Gemfile'
+
+Style/Documentation:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+Lint/LiteralAsCondition:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 15
+
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    module_inclusion:
+      - extend
+      - include
+      - prepend
+  ExpectedOrder:
+    - module_inclusion
+    - constants
+    - attr_accesor
+    - attr_reader
+    - attr_writer
+    - public_class_methods
+    - initializer
+    - public_methods
+    - protected_methods
+    - private_methods
+
+Layout/ArrayAlignment:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: true
+  EnforcedLastArgumentHashStyle: ignore_implicit
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: true
+  Exclude:
+    - spec/**/*_spec.rb
+    - spec/shared_examples/**/*.rb
