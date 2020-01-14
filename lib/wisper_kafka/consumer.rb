@@ -2,7 +2,6 @@
 
 require 'racecar'
 require 'json'
-require 'active_support/core_ext/hash/keys'
 
 module WisperKafka
   class Consumer < Racecar::Consumer
@@ -10,7 +9,7 @@ module WisperKafka
 
     # :reek:UtilityFunction
     def process(message)
-      parsed_message = JSON.parse(message.value).deep_symbolize_keys
+      parsed_message = JSON.parse(message.value, symbolize_names: true)
 
       subscriber = parsed_message.fetch(:subscriber)
       event = parsed_message.fetch(:event)
