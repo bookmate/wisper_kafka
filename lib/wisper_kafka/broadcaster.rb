@@ -12,7 +12,7 @@ module WisperKafka
 
     def self.register
       Wisper.configure do |config|
-        config.broadcaster :kafka, WisperKafka::Broadcaster.new
+        config.broadcaster :kafka, self.new
       end
     end
 
@@ -27,7 +27,7 @@ module WisperKafka
     # :reek:UtilityFunction
     def broadcast(subscriber, _publisher, event, args)
       event_data = { subscriber: subscriber, event: event, args: args }
-      kafka_options = WisperKafka::Broadcaster.kafka_options(subscriber, args)
+      kafka_options = self.class.kafka_options(subscriber, args)
 
       DeliveryBoy.deliver(event_data.to_json, **kafka_options)
     end
