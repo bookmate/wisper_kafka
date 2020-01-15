@@ -30,6 +30,8 @@ RSpec.describe WisperKafka::Broadcaster do
       Wisper.subscribe(Subscriber, broadcaster: :kafka)
     end
 
+    after { Wisper.unsubscribe(Subscriber) }
+
     it 'emits an event with kafka broadcaster' do
       publisher.call
 
@@ -56,6 +58,24 @@ RSpec.describe WisperKafka::Broadcaster do
 
         expect(DeliveryBoy).to have_received(:deliver).with(
           expected_event_data.to_json, topic: 'custom_topic', partition_key: 'event-1'
+        )
+      end
+    end
+
+    context 'with custom topic' do
+      let(:custom_topic) { 'custom_topic' }
+
+      around do |example|
+        WisperKafka::Settings.topic = custom_topic
+        example.run
+        WisperKafka::Settings.topic = nil
+      end
+
+      it 'allows to set custom topic' do
+        publisher.call
+
+        expect(DeliveryBoy).to have_received(:deliver).with(
+          expected_event_data.to_json, topic: custom_topic
         )
       end
     end

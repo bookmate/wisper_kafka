@@ -8,11 +8,9 @@ require 'delivery_boy'
 
 module WisperKafka
   class Broadcaster
-    DEFAULT_KAFKA_OPTIONS = { topic: WisperKafka::Settings.topic }.freeze
-
     def self.register
       Wisper.configure do |config|
-        config.broadcaster :kafka, self.new
+        config.broadcaster :kafka, new
       end
     end
 
@@ -20,7 +18,7 @@ module WisperKafka
     def self.kafka_options(subscriber, args)
       return subscriber.kafka_options(*args) if subscriber.respond_to?(:kafka_options)
 
-      DEFAULT_KAFKA_OPTIONS
+      { topic: WisperKafka::Settings.topic }
     end
 
     # :reek:LongParameterList
