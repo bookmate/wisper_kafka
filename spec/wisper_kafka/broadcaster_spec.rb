@@ -44,8 +44,8 @@ RSpec.describe WisperKafka::Broadcaster do
           # :reek:UnusedParameters
           def self.new_event(event_id:); end
 
-          def self.kafka_options(args)
-            partition_key = "event-#{args.fetch(:event_id)}"
+          def self.kafka_options(event_id:)
+            partition_key = "event-#{event_id}"
             { topic: 'custom_topic', partition_key: partition_key }
           end
         end
