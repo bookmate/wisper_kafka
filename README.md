@@ -24,13 +24,58 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Configure DeliveryBoy
+https://github.com/zendesk/delivery_boy#configuration
+
+### Configure Racecar
+https://github.com/zendesk/racecar#installation
+
+### Use WisperKafka
+
+Set `broadcaster` as `:kafka`:
+
+```ruby
+Wisper.subscribe(Subscriber, broadcaster: :kafka)
+```
+
+### Setup topic for events
+Default topic is: `wisper_events`.
+
+You can set it manually:
+```
+WisperKafka::Settings.topic = 'custom_topic'
+```
+
+### Custom topic and other DeliveryBoy params.
+Default params: 
+```ruby
+{ topic: WisperKafka::Settings.topic }
+```
+
+You can use your own `kafka_options` into subscriber.
+```ruby
+class Subscriber
+  def self.kafka_options(event_id:)
+    partition_key = "event-#{event_id}"
+    { topic: 'custom_topic', partition_key: partition_key }
+  end
+
+  def self.new_event(event_id:); end
+end
+```
+
+### Consumers
+You can write (your own consumer)[https://github.com/zendesk/racecar#running-consumers], or use default (WisperKafka::Consumer)[https://github.com/krim/wisper_kafka/blob/master/lib/wisper_kafka/consumer.rb]
+
+(Run your consumer)[https://github.com/zendesk/racecar#running-consumers]
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies.
+You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Test
+Run `rake spec` to run the tests. 
 
 ## Contributing
 

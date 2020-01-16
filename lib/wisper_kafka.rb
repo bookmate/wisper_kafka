@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require 'wisper_kafka/version'
-
-module WisperKafka
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require 'wisper_kafka/settings'
+require 'wisper_kafka/broadcaster'
+require 'wisper_kafka/consumer'
