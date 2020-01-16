@@ -12,13 +12,13 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Asynchronous event publishing for Wisper using Kafka'
   spec.description   = 'Asynchronous event publishing for Wisper using Kafka'
-  spec.homepage      = 'https://github.com/krim/wisper_kafka'
+  spec.homepage      = 'https://github.com/bookmate/wisper_kafka'
   spec.license       = 'MIT'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/krim/wisper_kafka'
-  spec.metadata['changelog_uri'] = 'https://github.com/krim/wisper_kafka/blob/master/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/bookmate/wisper_kafka'
+  spec.metadata['changelog_uri'] = 'https://github.com/bookmate/wisper_kafka/blob/master/CHANGELOG.md'
 
   spec.files         = Dir.glob('lib/**/*') + Dir.glob('bin/*')
   spec.bindir        = 'bin'

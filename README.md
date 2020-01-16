@@ -2,9 +2,9 @@
 
 Asynchronous event publishing for Wisper using Kafka.
 
-[![Build Status](https://travis-ci.org/krim/wisper_kafka.svg?branch=master)](https://travis-ci.org/krim/wisper_kafka)
-[![Maintainability](https://api.codeclimate.com/v1/badges/6d7aa78830602cc3f891/maintainability)](https://codeclimate.com/github/krim/wisper_kafka/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/6d7aa78830602cc3f891/test_coverage)](https://codeclimate.com/github/krim/wisper_kafka/test_coverage)
+[![Build Status](https://travis-ci.org/bookmate/wisper_kafka.svg?branch=master)](https://travis-ci.org/bookmate/wisper_kafka)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6d7aa78830602cc3f891/maintainability)](https://codeclimate.com/github/bookmate/wisper_kafka/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6d7aa78830602cc3f891/test_coverage)](https://codeclimate.com/github/bookmate/wisper_kafka/test_coverage)
 
 ## Installation
 
@@ -65,7 +65,7 @@ end
 ```
 
 ### Consumers
-You can write [your own consumer](https://github.com/zendesk/racecar#running-consumers), or use default [WisperKafka::Consumer](https://github.com/krim/wisper_kafka/blob/master/lib/wisper_kafka/consumer.rb).
+You can write [your own consumer](https://github.com/zendesk/racecar#running-consumers), or use default [WisperKafka::Consumer](https://github.com/bookmate/wisper_kafka/blob/master/lib/wisper_kafka/consumer.rb).
 
 [Run your consumer](https://github.com/zendesk/racecar#running-consumers)
 
@@ -79,7 +79,7 @@ Run `rake spec` to run the tests.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/krim/wisper_kafka.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bookmate/wisper_kafka.
 
 ## License
 
