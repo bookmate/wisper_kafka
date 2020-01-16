@@ -65,9 +65,9 @@ end
 ```
 
 ### Consumers
-You can write (your own consumer)[https://github.com/zendesk/racecar#running-consumers], or use default (WisperKafka::Consumer)[https://github.com/krim/wisper_kafka/blob/master/lib/wisper_kafka/consumer.rb]
+You can write [your own consumer](https://github.com/zendesk/racecar#running-consumers), or use default [WisperKafka::Consumer](https://github.com/krim/wisper_kafka/blob/master/lib/wisper_kafka/consumer.rb).
 
-(Run your consumer)[https://github.com/zendesk/racecar#running-consumers]
+[Run your consumer](https://github.com/zendesk/racecar#running-consumers)
 
 ## Development
 
