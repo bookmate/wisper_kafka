@@ -2,6 +2,7 @@
 
 Asynchronous event publishing for Wisper using Kafka.
 
+[![Gem Version](https://badge.fury.io/rb/wisper_kafka.svg)](https://badge.fury.io/rb/wisper_kafka)
 [![Build Status](https://travis-ci.org/bookmate/wisper_kafka.svg?branch=master)](https://travis-ci.org/bookmate/wisper_kafka)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6d7aa78830602cc3f891/maintainability)](https://codeclimate.com/github/bookmate/wisper_kafka/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6d7aa78830602cc3f891/test_coverage)](https://codeclimate.com/github/bookmate/wisper_kafka/test_coverage)
